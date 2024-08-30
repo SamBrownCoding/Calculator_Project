@@ -1,6 +1,7 @@
-const display = document.getElementById("display");
+let display = document.getElementById("display");
 const clearDisplay = document.getElementById("clear");
-let heading = document.querySelector("#display h2")
+let previousMath = document.querySelector("#display p");
+let resultDisplay = document.querySelector("#display h2");
 
 let curInput = '';
 let mathOperator = '';
@@ -22,6 +23,8 @@ function clear() {
     firstInputHold = '';
     decimalAdded = false;
     display.innerText = '';
+    previousMath.innerText = '';
+    resultDisplay.innerText = '';
 };//end Function
 
 // Function to handle operator input
@@ -30,18 +33,13 @@ function inputOperator(op) {
     firstInputHold = curInput;
     mathOperator = op;
     curInput += ` ${op} `;
-    display.innerText = curInput;
     //curInput = '';
+    previousMath.innerText = `${firstInputHold} ${op}`;
     decimalAdded = false;
 };//end Function
 
-function calculate(math,  hold, lastInput){
-    let result;
-    if(math === '+') {
-        result = parseInt(hold) + parseInt(lastInput);
-    }
-    
-heading.innerText = `${result}`;
+function calculate() {
+   
 };//end function
 
 
