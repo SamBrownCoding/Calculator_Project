@@ -23,26 +23,50 @@ function clear() {
     firstInputHold = '';
     decimalAdded = false;
     display.innerText = '';
-    //previousMath.innerText = '';
-    //resultDisplay.innerText = '';
+    previousMath.innerText = '';
+    resultDisplay.innerText = '';
 };//end Function
 
 // Function to handle operator input
 function inputOperator(op) {
     if (curInput === '') return;
+    // Evaluate the current expression before adding a new operator
+    if (firstInputHold !== '') {
+        calculate();
+    }
     firstInputHold = curInput;
     mathOperator = op;
     curInput += ` ${op} `;
     display.innerText = curInput;
     //curInput = '';
-    //previousMath.innerText = `${firstInputHold} ${op}`;
+    previousMath.innerText = `${firstInputHold} ${op}`;
     decimalAdded = false;
 };//end Function
 
 function calculate() {
-    
-};//end function
+    if (firstInputHold === '' || curInput === '') return;
 
+    const [firstNumber, operator, secondNumber] = curInput.split(' ');
+    let result;
+
+    if (operator === '+') {
+        result = parseFloat(firstNumber) + parseFloat(secondNumber);
+    } else if (operator === '-') {
+        result = parseFloat(firstNumber) - parseFloat(secondNumber);
+    } else if (operator === '*') {
+        result = parseFloat(firstNumber) * parseFloat(secondNumber);
+    } else if (operator === '/') {
+        result = parseFloat(firstNumber) / parseFloat(secondNumber);
+    } else {
+        return; // Invalid operator
+    }
+
+    previousMath.innerText = `${firstInputHold} ${op} ${curInput}`;
+    resultDisplay.innerHTML = `${result}`
+    curInput = result.toString(); 
+    firstInputHold = '';
+    mathOperator = '';
+}
 
 //Event Listener BUTTON CLICK ACTION
 clearDisplay.addEventListener("click", () => {
