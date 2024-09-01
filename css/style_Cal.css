@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'digital-7regular';
+    src: url('../webfontkit-20240901-154802/digital7-rg1ml-webfont.woff2') format('woff2'),
+         url('../webfontkit-20240901-154802/digital7-rg1ml-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .bg {
     background-color: #000;
 }
@@ -8,27 +17,33 @@ body h1 {
 }
 
 .displayScreen {
-    height: 80px;
+    height: 100px;
     background-color: #e9ecef;
     text-align: right;
     margin-bottom: 10%;
+    font-family: 'digital-7regular';
     font-size: 24px;
     border: inset 5px #bfc6ce;
     border-radius: 5px;
 }
 
 .display {
-    font-size: 24px;
-    margin-bottom: -15px;
+    font-size: 30px;
+    margin-bottom: -25px;
+    font-family: 'digital-7regular';
 }
 
 .resultDisplay {
-    font-size: 40px;
+    font-size: 60px;
 }
 
 .calBox {
+    transform: scaleX(0.8) scaleY(0.8) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
     margin-top: 2%;
-    background-color: #3b4d74;
+    background-color: hsl(221, 33%, 34%);
+    box-shadow: 3px 3px 5px 3px rgba(238, 238, 238, 1);
+    width: 100%;
+    height: 100%;
     /*height: 550px;*/
     padding: 20px;
     text-align: center;
@@ -70,8 +85,8 @@ body h1 {
     background: linear-gradient(to left,
             hsl(340deg 100% 16%) 0%,
             hsl(340deg 100% 32%) 8%,
-            hsl(340deg 100% 32%) 92%,
-            hsl(340deg 100% 16%) 100%);
+            hsl(340deg, 100%, 32%) 92%,
+            hsl(340deg, 100%, 16%) 100%);
 }
 
 .front {
@@ -101,7 +116,9 @@ body h1 {
 .pushable:active .front {
     transform: translateY(-2px);
     transition: transform 34ms;
-}
+    font-weight: bold;
+    text-shadow: 2px 2px 12px rgba(233, 236, 239, 0.9),
+    -2px -2px 12px rgba(233, 236, 239, 0.9);}
 
 .pushable:hover .shadow {
     transform: translateY(4px);
@@ -126,6 +143,10 @@ body h1 {
     margin-bottom: 20px;
 }
 
+#clear {
+    width: 204px;
+}
+
 .second {
     align-items: center;
     margin-bottom: 20px;
@@ -136,17 +157,22 @@ body h1 {
     margin-bottom: 20px;
 }
 
+#add {
+    height: 128px;
+    width: 92px;
+}
+
+#add .front{
+    height: 128px;
+    align-content: center;
+}
 
 .last {
     align-items: center;
     margin-bottom: 20px;
 }
 
-#add {
-    height: 128px;
-}
 
-#add .front{
-    height: 128px;
-    align-content: center;
+#zero {
+    width: 204px;
 }

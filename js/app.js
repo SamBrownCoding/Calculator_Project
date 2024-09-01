@@ -13,7 +13,7 @@ function showDisplay(input) {
     if (input === '.' && decimalAdded) return;
     if (input === '.') decimalAdded = true;
     curInput += input;
-    display.innerText = curInput;
+    resultDisplay.innerText = curInput;
 };//end Function
 
 // Function that clear the display 
@@ -37,7 +37,7 @@ function inputOperator(op) {
     firstInputHold = curInput;
     mathOperator = op;
     curInput += ` ${op} `;
-    display.innerText = curInput;
+    resultDisplay.innerText = curInput;
     //curInput = '';
     //previousMath.innerText = `${firstInputHold} ${op}`;
     decimalAdded = false;
