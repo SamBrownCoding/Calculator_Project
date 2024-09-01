@@ -1,7 +1,7 @@
 const display = document.getElementById("display");
 const clearDisplay = document.getElementById("clear");
-let previousMath = document.querySelector("#display p");
-let resultDisplay = document.querySelector("#display h2");
+//let previousMath = document.getElementById("previousMath");
+let resultDisplay = document.getElementById("resultDisplay");
 
 let curInput = '';
 let mathOperator = '';
@@ -23,7 +23,7 @@ function clear() {
     firstInputHold = '';
     decimalAdded = false;
     display.innerText = '';
-    previousMath.innerText = '';
+    //previousMath.innerText = '';
     resultDisplay.innerText = '';
 };//end Function
 
@@ -39,7 +39,7 @@ function inputOperator(op) {
     curInput += ` ${op} `;
     display.innerText = curInput;
     //curInput = '';
-    previousMath.innerText = `${firstInputHold} ${op}`;
+    //previousMath.innerText = `${firstInputHold} ${op}`;
     decimalAdded = false;
 };//end Function
 
@@ -61,8 +61,9 @@ function calculate() {
         return; // Invalid operator
     }
 
-    previousMath.innerText = `${firstInputHold} ${op} ${curInput}`;
-    resultDisplay.innerHTML = `${result}`
+    //previousMath.innerText = `${firstInputHold} ${operator} ${curInput}`;
+    display.innerText = `${curInput}`;
+    resultDisplay.innerText = `${result}`;
     curInput = result.toString(); 
     firstInputHold = '';
     mathOperator = '';
@@ -70,7 +71,7 @@ function calculate() {
 
 //Event Listener BUTTON CLICK ACTION
 clearDisplay.addEventListener("click", () => {
-    clear('AC');
+    clear('C');
 });
 
 const decimal = document.getElementById("dot").addEventListener("click", () => showDisplay('.'));
@@ -79,7 +80,7 @@ const equal = document.getElementById("equal").addEventListener("click", () => c
 
 const divide = document.getElementById("divide").addEventListener("click", () => inputOperator('/'));
 
-const multiple = document.getElementById("multiple").addEventListener("click", () => inputOperator('x'));
+const multiple = document.getElementById("multiple").addEventListener("click", () => inputOperator('*'));
 
 const add = document.getElementById("add").addEventListener("click", () => inputOperator('+'));
 
@@ -105,3 +106,27 @@ const eight = document.getElementById("eight").addEventListener("click", () => s
 
 const nine = document.getElementById("nine").addEventListener("click", () => showDisplay('9'));
 
+// Add event listener for key presses
+document.addEventListener('keydown', handleKeyPress);
+
+// Function to handle key presses
+function handleKeyPress(event) {
+    const key = event.key;
+
+    // If the key is a number
+    if (!isNaN(key)) {
+        showDisplay(key);
+        // If the key is a decimal point
+    } else if (key === '.') {
+        showDisplay(key);
+        // If the key is an operator
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        inputOperator(key);
+        // If the key is Enter or =
+    } else if (key === 'Enter' || key === '=') {
+        calculate();
+        // If the key is Backspace
+    } else if (key === 'Backspace') {
+        clear();
+    }
+}

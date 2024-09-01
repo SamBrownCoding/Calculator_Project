@@ -4,32 +4,35 @@
 
 body h1 {
     color: white;
+    text-align: center;
 }
 
-.display {
+.displayScreen {
     height: 80px;
     background-color: #e9ecef;
     text-align: right;
-    padding-top: 0px;
-    padding-right: 10px;
-    padding-bottom: 5px;
+    margin-bottom: 10%;
     font-size: 24px;
-    border: 1px solid #ced4da;
+    border: inset 5px #bfc6ce;
     border-radius: 5px;
 }
 
-.display p {
-    margin-bottom: 0px;
+.display {
+    font-size: 24px;
+    margin-bottom: -15px;
 }
 
-.display h2 {
-    margin-bottom: 0px;
+.resultDisplay {
+    font-size: 40px;
 }
 
 .calBox {
+    margin-top: 2%;
     background-color: #3b4d74;
-    height: 550px;
+    /*height: 550px;*/
     padding: 20px;
+    text-align: center;
+    border-radius: 12px;
 }
 
 /*#region BUTTONS STYLE*/
@@ -50,7 +53,7 @@ body h1 {
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    background: hsl(0deg 0% 0% / 0.25);
+    background: #00000040;
     will-change: transform;
     transform: translateY(2px);
     transition:
@@ -116,3 +119,34 @@ body h1 {
 }
 
 /*#endregion*/
+
+
+.top {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.second {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#mid {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.last {
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#add {
+    height: 128px;
+}
+
+#add .front{
+    height: 128px;
+    align-content: center;
+}
