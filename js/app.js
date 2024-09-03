@@ -76,7 +76,7 @@ clearDisplay.addEventListener("click", () => {
 
 const decimal = document.getElementById("dot").addEventListener("click", () => showDisplay('.'));
 
-const equal = document.getElementById("equal").addEventListener("click", () => calculate('='));
+const equal = document.getElementById("equal").addEventListener("click", () => calculate('Enter'));
 
 const divide = document.getElementById("divide").addEventListener("click", () => inputOperator('/'));
 
@@ -130,3 +130,11 @@ function handleKeyPress(event) {
         clear();
     }
 }
+
+
+// let calcNum = ["zero","one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+ 
+// for (let i = 0; i < calcNum.length; i++) {
+//     const numButton = document.getElementById(calcNum[i]);
+//     numButton.addEventListener("click", () => updateDisplay(numButton.textContent));
+// }//end for loop
