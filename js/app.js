@@ -1,6 +1,5 @@
 const display = document.getElementById("display");
 const clearDisplay = document.getElementById("clear");
-//let previousMath = document.getElementById("previousMath");
 let resultDisplay = document.getElementById("resultDisplay");
 
 let curInput = '';
@@ -23,7 +22,6 @@ function clear() {
     firstInputHold = '';
     decimalAdded = false;
     display.innerText = '';
-    //previousMath.innerText = '';
     resultDisplay.innerText = '';
 };//end Function
 
@@ -39,7 +37,6 @@ function inputOperator(op) {
     curInput += ` ${op} `;
     resultDisplay.innerText = curInput;
     //curInput = '';
-    //previousMath.innerText = `${firstInputHold} ${op}`;
     decimalAdded = false;
 };//end Function
 
@@ -61,7 +58,6 @@ function calculate() {
         return; // Invalid operator
     }
 
-    //previousMath.innerText = `${firstInputHold} ${operator} ${curInput}`;
     display.innerText = `${curInput}`;
     resultDisplay.innerText = `${result}`;
     curInput = result.toString(); 
