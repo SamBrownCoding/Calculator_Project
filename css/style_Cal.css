@@ -8,7 +8,7 @@
 }
 
 .bg {
-    background-color: #000;
+    background-image: url(../media/vecteezy_abstract-neon-background-with-glitch-effect_.jpg)
 }
 
 .glitch-wrapper {
@@ -18,7 +18,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #000000;
 }
 
 .glitch {
